@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/core";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { useState } from "react";
 
-const SignIn = (setToken) => {
+const Signin = ({ setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -31,9 +31,9 @@ const SignIn = (setToken) => {
         console.log(data);
         setToken(data.token);
       } catch (error) {
-        console.log("error");
+        console.log(error);
         if (error.response) {
-          setErrorMessage("Missing Parameters");
+          setErrorMessage("This mail doesn't exist");
         } else {
           setErrorMessage(
             "l'identifiant ou le mot de passe ne sont pas correct"
@@ -41,7 +41,7 @@ const SignIn = (setToken) => {
         }
       }
     } else {
-      setErrorMessage("This mail doesn't exist");
+      setErrorMessage("Missing Parameters");
     }
   };
   return (
@@ -170,4 +170,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignIn;
+export default Signin;

@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/core";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { useState } from "react";
 
-export default function SignUp({ setToken }) {
+export default function Signup({ setToken }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [description, setDecription] = useState("");
